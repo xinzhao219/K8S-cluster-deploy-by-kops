@@ -2,7 +2,7 @@ FROM alpine:3.9 AS builder
 
 ENV HELMVERSION v3.3.4
 ENV KUBECTLVERSION v1.18.0
-ENV YQVERSION 2.4.0
+# ENV YQVERSION 2.4.0
 
 RUN apk add --no-cache curl bind-tools
 
