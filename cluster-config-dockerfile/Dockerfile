@@ -48,7 +48,7 @@ RUN set -x && \
 COPY --from=builder /helm /usr/local/bin/helm
 
 # Setup Kubernetes Environment
-COPY --from=builder /cluster.conf $HOME/.kube/config
+COPY --from=builder /config.yaml $HOME/.kube/config
 RUN chown -R kubectl: $HOME
 
 COPY entrypoint.sh /entrypoint.sh
