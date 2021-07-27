@@ -1,8 +1,8 @@
 # These scripts are used for creating the docker image for cluster manager.
 
 Once you have deploy a kubernetes cluster on AWS using kops, 
-these scrips can help you buid a kops manager docker image, 
-which can be used to deploy a new kops manager for the cluster deploy new product.
+these scrips can help you buid a cluster manager using docker image for backup, 
+which can be used to deploy a new manager for the cluster deploy new product.
 
 The crutial part of these scrips is the config.yaml file. This file is a copy of "~/.kube/config" from the original machine where you deploy the k8s cluster on AWS.
 This config file recoreds the cluster configuration infomation and can be used in the new instance.
