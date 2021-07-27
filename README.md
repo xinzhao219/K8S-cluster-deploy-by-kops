@@ -1,7 +1,7 @@
 # K8S-cluster-deploy-by-kops
 
-Install kops on Mac laptop
-curl -Lo kops https://github.com/kubernetes/kops/releases/download/v1.18.0/kops-darwin-amd64
+Install kops on your laptop
+curl -Lo kops https://github.com/kubernetes/kops/releases/download/v1.18.0/kops-linux-amd64
 chmod +x ./kops
 sudo mv ./kops /usr/local/bin/
 
