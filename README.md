@@ -41,7 +41,7 @@ kops create cluster \
 ## Edit cluster configuration
 ### •	change root volume size for nodes
 ```
-  kops edit ig --name=devops.k8s.local nodes
+kops edit ig --name=devops.k8s.local nodes
 ```
 ```
 apiVersion: kops.k8s.io/v1alpha2
