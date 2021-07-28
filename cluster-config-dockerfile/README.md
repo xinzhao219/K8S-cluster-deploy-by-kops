@@ -9,12 +9,12 @@ This config file recoreds the cluster configuration infomation and can be used i
 
 ## Docker image building steps are as follows.
 ```
-docker build -t <image tag> .
-docker tag <image tag> <docker registroy and image path>
+docker build -t kopscluster .
+docker tag kopscluster xinzhao.jfrog.io/product-docker/kopscluster:1.0.2
 docker login in <docker registory server>
-docker push <docker registroy and image path>
+docker push xinzhao.jfrog.io/product-docker/kopscluster:1.0.2
 ```
 ## Run the manager container
 ```
-docker run -it <image tag> sh
+docker run -it kopscluster sh
 ```
