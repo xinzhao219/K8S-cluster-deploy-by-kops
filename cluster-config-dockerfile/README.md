@@ -11,7 +11,7 @@ This config file recoreds the cluster configuration infomation and can be used i
 ```
 docker build -t kopscluster .
 docker tag kopscluster xinzhao.jfrog.io/product-docker/kopscluster:1.0.2
-docker login in <docker registory server>
+docker login xinzhao.jfrog.io
 docker push xinzhao.jfrog.io/product-docker/kopscluster:1.0.2
 ```
 ## Run the manager container
