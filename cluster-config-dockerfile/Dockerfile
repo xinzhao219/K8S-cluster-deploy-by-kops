@@ -25,6 +25,8 @@ RUN curl -Lsfo kubectl https://storage.googleapis.com/kubernetes-release/release
 ################################################################################
 FROM alpine:3.9
 
+ARG AWS_KEY
+ARG AWS_ID
 # Install required packages
 # This lot required for aws-cli and helm plugins
 # RUN apk add --update git bash curl python py-pip openssl ca-certificates
@@ -50,6 +52,13 @@ COPY --from=builder /helm /usr/local/bin/helm
 # Setup Kubernetes Environment
 COPY --from=builder /cluster.conf $HOME/.kube/config
 RUN chown -R kubectl: $HOME
+
+# Setup AWS credentials
+RUN pip install --upgrade pip awscli
+RUN mkdir /home/kubectl/.aws
+RUN echo "[devops]" > /home/kubectl/.aws/credentials
+RUN echo "aws_access_key_id = ${AWS_ID}" >> /home/kubectl/.aws/credentials
+RUN echo "aws_secret_access_key = ${AWS_KEY}" >> /home/kubectl/.aws/credentials
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
