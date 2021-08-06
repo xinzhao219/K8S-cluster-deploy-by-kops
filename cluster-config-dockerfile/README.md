@@ -9,7 +9,7 @@ This config file recoreds the cluster configuration infomation and can be used i
 
 ## Docker image building steps are as follows.
 ```
-docker build -t kopscluster .
+docker build -t kopscluster . --build-arg AWS_ID=<your aws_access_key_id> --build-arg AWS_KEY=<your aws_secret_access_key>
 docker tag kopscluster xinzhao.jfrog.io/product-docker/kopscluster:1.0.2
 docker login xinzhao.jfrog.io
 docker push xinzhao.jfrog.io/product-docker/kopscluster:1.0.2
