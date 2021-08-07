@@ -23,6 +23,7 @@ ssh-keygen
 ```
 
 ## Create cluster configuration
+Two nodes are needed because Helm chart update need one more node to deploy new pod with new app version.
 ```
 kops create cluster \
 --cloud aws \
